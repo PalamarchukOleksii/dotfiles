@@ -7,6 +7,10 @@
 
 export PATH=$PATH:$HOME/.dotnet/tools
 
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -33,3 +37,4 @@ unset __conda_setup
 export GPG_TTY=$(tty)
 
 eval "$(starship init bash)"
+

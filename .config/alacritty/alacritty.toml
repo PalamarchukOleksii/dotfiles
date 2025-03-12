@@ -4,23 +4,37 @@ dynamic_padding = true
 dimensions = { columns = 90, lines = 28 }
 
 [font]
-size = 14.0
+size = 16.0
 
 [font.normal]
-family = "Hack"
+family = "Terminus"
 style = "Regular"
 
 [font.bold]
-family = "Hack"
+family = "Terminus"
 style = "Bold"
 
-[font.italic]
-family = "Hack"
-style = "Italic"
+[colors.primary]
+background = "0x002b36"
+foreground = "0x93a1a1"
 
-[font.bold_italic]
-family = "Hack"
-style = "Bold Italic"
+[colors.normal]
+black   = "0x002b36"
+red     = "0xdc322f"
+green   = "0x859900"
+yellow  = "0xb58900"
+blue    = "0x268bd2"
+magenta = "0x6c71c4"
+cyan    = "0x2aa198"
+white   = "0x93a1a1"
 
-[scrolling]
-history = 10000
+[colors.bright]
+black   = "0x657b83"
+red     = "0xdc322f"
+green   = "0x859900"
+yellow  = "0xb58900"
+blue    = "0x268bd2"
+magenta = "0x6c71c4"
+cyan    = "0x2aa198"
+white   = "0xfdf6e3"
+

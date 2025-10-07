@@ -4,7 +4,7 @@ font pango:JetBrains Mono 12
 
 for_window [class=".*"] border pixel 2
 
-for_window [class="XTerm"] move to workspace $ws1
+for_window [class="Alacritty"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="Code"] move to workspace $ws3
 for_window [class="Telegram"] move to workspace $ws4
@@ -39,7 +39,7 @@ floating_modifier $mod
 
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram

@@ -16,6 +16,7 @@ exec --no-startup-id clipmenud
 exec --no-startup-id redshift
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/pixel.png
+exec --no-startup-id lxsession
 
 exec_always --no-startup-id setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle"
 exec_always --no-startup-id xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Tapping Enabled" 1

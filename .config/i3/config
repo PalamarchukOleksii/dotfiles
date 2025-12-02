@@ -15,6 +15,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id dunst
 exec --no-startup-id clipmenud
 exec --no-startup-id redshift
+exec --no-startup-id flameshot
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-scale ~/wallpapers/pixel.png
 exec --no-startup-id lxsession
@@ -28,24 +29,20 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots
-bindsym $mod+Shift+Print exec flameshot gui
-
-floating_modifier $mod
-
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
 
-bindsym $mod+Shift+q kill
-
 bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=12 -p Run:'"
 bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=12' -p 'Clipboard:'"
+
+bindsym Print exec flameshot full -p ~/Pictures/Screenshots
+bindsym $mod+Shift+s exec flameshot gui
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -62,9 +59,8 @@ bindsym $mod+Shift+v split v
 
 bindsym $mod+Shift+f fullscreen toggle
 
+floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+space focus mode_toggle
 
 set $ws1 "1"
 set $ws2 "2"
@@ -99,9 +95,17 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id \
+    "CHOICE=$(printf 'Lock\nLogout\nReboot\nShutdown' | dmenu -i -l 10 -fn 'JetBrains Mono:size=12' -p 'Power:'); \
+    case $CHOICE in \
+        Lock) i3lock ;; \
+        Logout) i3-msg exit ;; \
+        Reboot) systemctl reboot ;; \
+        Shutdown) systemctl poweroff ;; \
+    esac"
 
 mode "resize" {
         bindsym Left resize grow width 10 px or 10 ppt

@@ -16,7 +16,9 @@ shopt -s histappend
 PROMPT_COMMAND="history -a; history -n"
 HISTTIMEFORMAT="%F %T "
 
-source /usr/share/git/completion/git-prompt.sh
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+    source /usr/share/git/completion/git-prompt.sh
+fi
 
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWDIRTYSTATE=true
@@ -30,8 +32,6 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH="$PATH:/usr/share/dotnet"
 export PATH="$PATH:/home/oleksa/.dotnet/tools"
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-

@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:JetBrains Mono 12
+font pango:JetBrains Mono 14
 
 for_window [class=".*"] border pixel 2
 smart_borders on
@@ -17,7 +17,7 @@ exec --no-startup-id clipmenud
 exec --no-startup-id redshift
 exec --no-startup-id flameshot
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-scale ~/wallpapers/pixel.png
+exec --no-startup-id feh --bg-scale ~/wallpapers/mountain.png
 exec --no-startup-id lxsession
 
 exec_always --no-startup-id setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle"
@@ -34,9 +34,10 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
+bindsym $mod+j exec ~/Applications/Joplin-3.4.12.AppImage
 
-bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=12 -p Run:'"
-bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=12' -p 'Clipboard:'"
+bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=14 -p Run:'"
+bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=14' -p 'Clipboard:'"
 
 bindsym Print exec flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+Shift+s exec flameshot gui

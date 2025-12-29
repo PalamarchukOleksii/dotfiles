@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:JetBrains Mono 14
+font pango:JetBrains Mono 12
 
 for_window [class=".*"] border pixel 2
 smart_borders on
@@ -11,18 +11,6 @@ for_window [class="Code"] move to workspace $ws3
 for_window [class="Telegram"] move to workspace $ws4
 
 exec --no-startup-id dex --autostart --environment i3
-
-exec --no-startup-id dunst
-exec --no-startup-id clipmenud
-exec --no-startup-id redshift
-exec --no-startup-id flameshot
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-scale ~/wallpapers/mountain.png
-exec --no-startup-id lxsession
-
-exec_always --no-startup-id setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle"
-exec_always --no-startup-id xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Natural Scrolling Enabled" 1
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
@@ -36,8 +24,8 @@ bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
 bindsym $mod+j exec ~/Applications/Joplin-3.4.12.AppImage
 
-bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=14 -p Run:'"
-bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=14' -p 'Clipboard:'"
+bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=12 -p Run:'"
+bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=12' -p 'Clipboard:'"
 
 bindsym Print exec flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+Shift+s exec flameshot gui

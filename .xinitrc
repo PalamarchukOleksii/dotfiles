@@ -1,4 +1,3 @@
-xset r rate 200 35 &
 xrandr -s 1920x1080 &
 xwallpaper --zoom ~/wallpapers/mountain.png &
 setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle" &

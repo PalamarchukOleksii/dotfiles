@@ -10,25 +10,33 @@ padding.x = 10
 padding.y = 10
 
 [colors.primary]
-background = "0x002b36"
-foreground = "0x93a1a1"
+foreground = "#d8dee9"
+background = "#2e3440"
+
+[colors.cursor]
+text = "#2e3440"
+cursor = "#d8dee9"
+
+[colors.selection]
+text = "#d8dee9"
+background = "#3f4758"
 
 [colors.normal]
-black = "0x002b36"
-red = "0xdc322f"
-green = "0x859900"
-yellow = "0xb58900"
-blue = "0x268bd2"
-magenta = "0x6c71c4"
-cyan = "0x2aa198"
-white = "0x93a1a1"
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
 
 [colors.bright]
-black = "0x657b83"
-red = "0xdc322f"
-green = "0x859900"
-yellow = "0xb58900"
-blue = "0x268bd2"
-magenta = "0x6c71c4"
-cyan = "0x2aa198"
-white = "0xfdf6e3"
+black = "#4c566a"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#8fbcbb"
+white = "#eceff4"

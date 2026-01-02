@@ -22,7 +22,6 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
-bindsym $mod+j exec ~/Applications/Joplin-3.4.12.AppImage
 
 bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=12 -p Run:'"
 bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=12' -p 'Clipboard:'"

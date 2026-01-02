@@ -1,0 +1,72 @@
+/*
+ * ROFI color theme - no icons
+ */
+
+configuration {
+  font: "JetBrains Mono Regular 12";
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #1d1f21;
+  bg-alt: #282a2e;
+  fg: #c5c8c6;
+  fg-alt: #ffffff;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  width: 700px;
+
+  border: 2px;
+  border-color: @bg-alt;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: @bg-alt;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-text]; 
+}
+
+/* remove element-icon section completely */
+
+element-text {
+  padding: 10px 10px;
+}
+
+element-text selected {
+  text-color: @fg-alt;
+}

@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:JetBrains Mono 12
+font pango:monospace 12
 
 for_window [class=".*"] border pixel 2
 smart_borders on
@@ -11,18 +11,6 @@ for_window [class="Code"] move to workspace $ws3
 for_window [class="Telegram"] move to workspace $ws4
 
 exec --no-startup-id dex --autostart --environment i3
-
-exec --no-startup-id xrandr -s 1920x1080
-exec --no-startup-id xwallpaper --zoom ~/wallpapers/mountain.png
-exec --no-startup-id setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle"
-exec --no-startup-id xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Natural Scrolling Enabled" 1
-
-exec --no-startup-id dunst
-exec --no-startup-id clipmenud
-exec --no-startup-id nm-applet
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id lxsession
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
@@ -35,14 +23,11 @@ bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
 
-bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn JetBrainsMono:size=12 -p Run:'"
-bindsym $mod+v exec "clipmenu -i -l 15 -fn 'JetBrains Mono:size=12' -p 'Clipboard:'"
+bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn monospace:size=12 -p Run:'"
+bindsym $mod+v exec "clipmenu -i -l 15 -fn monospace:size=12 -p 'Clipboard:'"
 
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots
-bindsym $mod+Shift+s exec flameshot gui
-
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym Print exec --no-startup-id maim | tee ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec --no-startup-id maim -s | tee ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | xclip -selection clipboard -t image/png
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -99,7 +84,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id \
-    "CHOICE=$(printf 'Lock\nLogout\nReboot\nShutdown' | dmenu -i -l 10 -fn 'JetBrains Mono:size=12' -p 'Power:'); \
+    "CHOICE=$(printf 'Lock\nLogout\nReboot\nShutdown' | dmenu -i -l 10 -fn monospace:size=12 -p 'Power:'); \
     case $CHOICE in \
         Lock) i3lock ;; \
         Logout) i3-msg exit ;; \

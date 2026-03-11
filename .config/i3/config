@@ -23,7 +23,7 @@ bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
 
-bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn monospace:size=12 -p Run:'"
+bindsym $mod+d exec "dmenu_run -i -l 15 -fn monospace:size=12 -p Run:"
 bindsym $mod+v exec "clipmenu -i -l 15 -fn monospace:size=12 -p 'Clipboard:'"
 
 bindsym Print exec --no-startup-id maim | tee ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | xclip -selection clipboard -t image/png

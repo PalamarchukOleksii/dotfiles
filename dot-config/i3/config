@@ -19,7 +19,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
-bindsym $mod+f exec pcmanfm
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
 

@@ -7,7 +7,6 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-# PS1='[\u@\h \W]\$ '
 
 HISTSIZE=10000
 HISTFILESIZE=20000
@@ -31,10 +30,9 @@ PS1='$( [ -n "$VIRTUAL_ENV" ] && printf "\[\e[93m\](%s)\[\e[0m\] " "$(basename "
 
 export GPG_TTY=$(tty)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export PATH="$PATH:/usr/share/dotnet"
 export PATH="$PATH:/home/oleksa/.dotnet/tools"
+export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-export PATH="$HOME/.local/bin:$PATH"

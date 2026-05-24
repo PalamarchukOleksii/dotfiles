@@ -10,25 +10,20 @@ for_window [class="firefox"] move to workspace $ws2
 for_window [class="Code"] move to workspace $ws3
 for_window [class="Telegram"] move to workspace $ws4
 
-exec --no-startup-id dex --autostart --environment i3
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+t exec Telegram
 bindsym $mod+c exec code
-bindsym $mod+f exec pcmanfm
 
 bindsym $mod+d exec "j4-dmenu-desktop --dmenu='dmenu -i -l 15 -fn monospace:size=12 -p Run:'"
 bindsym $mod+v exec "clipmenu -i -l 15 -fn 'monospace:size=12' -p 'Clipboard:'"
 
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots
+bindsym Print exec flameshot full -p ~/pictures/screenshots
 bindsym $mod+Shift+s exec flameshot gui
 
 bindsym $mod+Left focus left

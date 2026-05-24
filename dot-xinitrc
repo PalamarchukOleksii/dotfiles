@@ -1,18 +1,10 @@
 xrandr --output eDP-1 --auto --primary
 xrandr --output HDMI-1 --auto --above eDP-1 --set audio force-dvi
 
-xset r rate 200 35 &
-xwallpaper --zoom pictures/wallpapers/mountain.png &
-setxkbmap -layout "us,ua" -option "grp:alt_shift_toggle" &
-xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Tapping Enabled" 1 &
-xinput set-prop "ELAN0522:01 04F3:31C3 Touchpad" "libinput Natural Scrolling Enabled" 1 &
-
 dunst &
 flameshot &
-nm-applet &
-blueman-applet &
 clipmenud &
-redshift &
+blueman-applet &
 xss-lock --transfer-sleep-lock -- i3lock --nofork &
 
 exec i3;
